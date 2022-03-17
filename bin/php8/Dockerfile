@@ -1,8 +1,10 @@
+#
+
 FROM php:8.0.10-apache-buster
 
 # Surpresses debconf complaints of trying to install apt packages interactively
 # https://github.com/moby/moby/issues/4032#issuecomment-192327844
- 
+
 ARG DEBIAN_FRONTEND=noninteractive
 
 # Update
@@ -14,7 +16,7 @@ RUN apt-get -y update --fix-missing && \
 
 # Install useful tools and install important libaries
 RUN apt-get -y update && \
-    apt-get -y --no-install-recommends install nano wget \
+    apt-get -y --no-install-recommends install nano wget inotify-tools \
 dialog \
 libsqlite3-dev \
 libsqlite3-0 && \
@@ -26,7 +28,7 @@ libicu-dev && \
 build-essential \
 git \
 curl \
-libonig-dev && \ 
+libonig-dev && \
     apt-get -y --no-install-recommends install --fix-missing libcurl4 \
 libcurl4-openssl-dev \
 zip \
@@ -79,7 +81,7 @@ RUN docker-php-ext-install pdo_mysql && \
     docker-php-ext-install exif
 
 
-# Install Freetype 
+# Install Freetype
 RUN apt-get -y update && \
     apt-get --no-install-recommends install -y libfreetype6-dev \
 libjpeg62-turbo-dev \
