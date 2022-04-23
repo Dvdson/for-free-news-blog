@@ -5,15 +5,22 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Uniasselvi\\DesenvolvimentoWeb\\": "src/"
+            "Uniasselvi\\FreeBlog\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "Davidson Lucas Novais Nicácio",
+            "name": "Davidson Lucas novais Nicácio",
             "email": "dvdsoncomp@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
-    "require": {}
+    "minimum-stability": "RC",
+    "require": {
+        "doctrine/orm": "^2.12",
+        "symfony/cache": "^6.0",
+        "symfony/yaml": "^6.0",
+        "doctrine/migrations": "^3.5",
+        "doctrine/sql-formatter": "^1.1",
+        "doctrine/annotations": "^1.13"
+    }
 }

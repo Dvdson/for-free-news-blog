@@ -20,23 +20,26 @@ services:
       APACHE_DOCUMENT_ROOT: ${APACHE_DOCUMENT_ROOT-/var/www/html}
       PMA_PORT: ${HOST_MACHINE_PMA_PORT}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
   # Usado para Atualizar composer após update
-  composer_update:
-    build:
-      context: ./bin/${PHPVERSION}
-    restart: 'always'
-    depends_on:
-      - webserver
-    volumes:
-      - ${DOCUMENT_ROOT-./www}:/var/www/html:r
-    # Composer atualiza assim que container iniciar ou quando composer.json
-    # for alterado
-    command: >
-      bash -c "
-        composer update;
-        while inotifywait -e close_write composer.json;
-        do composer update;
-        done"
+#  composer_update:
+#    build:
+#      context: ./bin/${PHPVERSION}
+#    restart: 'always'
+#    depends_on:
+#      - webserver
+#    volumes:
+#      - ${DOCUMENT_ROOT-./www}:/var/www/html:r
+#    # Composer atualiza assim que container iniciar ou quando composer.json
+#    # for alterado
+#    command: >
+#      bash -c "
+#        composer update; composer dump-autoload -o;
+#        while inotifywait -e close_write composer.json;
+#        do composer update; composer dump-autoload -o;
+#        done"
   database:
     build:
       context: "./bin/${DATABASE}"
