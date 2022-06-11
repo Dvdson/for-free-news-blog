@@ -8,44 +8,34 @@ Estudantes:
 
 ### Linux
 
-Execute  o comando:
+Crie um arquivo .env para setar as variáveis de ambiente do projeto, o arquivo sample.env por ser usado como refêrencia. 
+Execute o comando:
+
+```bash
+Docker compose build
+```
+
+Assim o docker irá instalar todos os recursos necessários para os containers, após terminar execute o commando:
 
 ```bash
 Docker compose up
 ```
 
-
-
+Esse commando irá iniciar o servidor. 
 Para esconder a saída de dados no terminal adicione `-d` ao final do comando.
 
-### Comandos de iniciais
+Com o servidor ligado execute o commando, que irá executar os commandos iniciais:
+```bash
+Docker exec lamp-php8 ./init.sh
+```
+
+### Comandos dentro do container
 
 O container com possui os comandos iniciais de php tem o nome de *lamp-php8*, para realizar os comandos referentes, assim como os comandos do composer,  é preciso executar dentro deste container:
 
 ```bash
-docker exec lamp-php8 []
+docker exec lamp-php8 [commando vai aqui]
 ```
-
-
-
-#### Instalando Pacotes Composer
-
-Para instalar o os pacotes composer, execute:
-
-```bash 
-docker exec lamp-php8 composer install
-```
-
-
-
-#### Atualizar o Banco
-
-Para atualizar a estrutura do banco, execute:
-
-```bash
-docker exec lamp-php8 vendor/bin/migrate-doctrine migrate
-```
-
 
 
 ## Referências
