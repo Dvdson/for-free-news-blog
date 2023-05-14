@@ -3,6 +3,8 @@
 Estudantes:
 
 - __Davidson Lucas Novais Nicácio__ - _dvdsoncomp@gmail.com_
+- __Kelly da Cruz Vencionek__ - _kvencionek@gmail.com_
+
 
 ## Inicialização
 
