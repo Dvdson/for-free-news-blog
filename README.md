@@ -26,7 +26,7 @@ Para esconder a saída de dados no terminal adicione `-d` ao final do comando.
 
 Com o servidor ligado execute o commando, que irá executar os commandos iniciais:
 ```bash
-Docker exec lamp-php8 ./init.sh
+Docker exec lamp-php8 "sh init.sh"
 ```
 
 ### Comandos dentro do container
