@@ -4,6 +4,7 @@ Estudantes:
 
 - __Davidson Lucas Novais Nicácio__ - _dvdsoncomp@gmail.com_
 - __Kelly da Cruz Vencionek__ - _kvencionek@gmail.com_
+- __Elenise Vanessa Batista da Silva__ - _elifenix123@gmail.com_
 
 
 ## Inicialização
