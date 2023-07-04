@@ -19,7 +19,7 @@
         html,
         body {
             height: 100%;
-            background-color: #152733;
+            background-color: black;
             overflow: hidden;
         }
 
@@ -176,6 +176,7 @@ require_once __DIR__.'/../src/models/Funcionario.php';
 // Verifica se o formulário foi submetido
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $funcionario = new Funcionario();
+    $funcionario->codigo = $_POST["codigo"];
     $funcionario->nome = $_POST["nome"];
     $funcionario->cargo = $_POST["cargo"];
     $funcionario->descricaocargo = $_POST["descricaocargo"];
@@ -199,6 +200,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         </p>
                         <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" novalidade>
+
+                            <div class="col-md-12">
+                                <input class="form-control" type="text" id="nome" name="codigo" placeholder="Código"
+                                    style="width: -moz-available;" required>
+                            </div>
 
                             <div class="col-md-12">
                                 <input class="form-control" type="text" id="nome" name="nome" placeholder="Nome"

@@ -13,29 +13,21 @@ class Funcionario
 
     public function save()
     {
-        // Verificar se o funcionário já possui um código
-        if ($this->codigo) {
-            // Atualizar o registro no banco de dados
-            $query = "UPDATE funcionarios SET nome = :nome, cargo = :cargo, descricaocargo = :descricaocargo, setor = :setor, salario = :salario WHERE codigo = :codigo";
-        } else {
+
             // Inserir um novo registro no banco de dados
-            $query = "INSERT INTO funcionarios (nome, cargo, descricaocargo, setor, salario) VALUES (:nome, :cargo, :descricaocargo, :setor, :salario)";
-        }
+            $query = "INSERT INTO FUNCIONARIO (codigo, nome, cargo, descricaocargo, setor, salario) VALUES (:codigo, :nome, :cargo, :descricaocargo, :setor, :salario)";
 
         // Preparar a consulta
         $stmt = Database::getInstance()->getPdo()->prepare($query);
 
         // Bind dos parâmetros
+        $stmt->bindValue(':codigo', $this->codigo);
         $stmt->bindValue(':nome', $this->nome);
         $stmt->bindValue(':cargo', $this->cargo);
         $stmt->bindValue(':descricaocargo', $this->descricaocargo);
         $stmt->bindValue(':setor', $this->setor);
         $stmt->bindValue(':salario', $this->salario);
 
-        // Se já existir um código, bind também do código
-        if ($this->codigo) {
-            $stmt->bindValue(':codigo', $this->codigo);
-        }
 
         // Executar a consulta
         $result = $stmt->execute();
