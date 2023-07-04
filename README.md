@@ -9,8 +9,6 @@ Estudantes:
 
 ## Inicialização
 
-### Linux
-
 Crie um arquivo .env para setar as variáveis de ambiente do projeto, o arquivo sample.env por ser usado como refêrencia. 
 Execute o comando:
 
@@ -29,7 +27,7 @@ Para esconder a saída de dados no terminal adicione `-d` ao final do comando.
 
 Com o servidor ligado execute o commando, que irá executar os commandos iniciais:
 ```bash
-Docker exec lamp-php8 "sh init.sh"
+Docker exec lamp-php8 php FirstExecution.php
 ```
 
 ### Comandos dentro do container
@@ -40,12 +38,7 @@ O container com possui os comandos iniciais de php tem o nome de *lamp-php8*, pa
 docker exec lamp-php8 [commando vai aqui]
 ```
 
-
 ## Referências
 
 - [LAMP stack built with Docker Compose](https://github.com/sprintcube/docker-compose-lamp) - fork original para iniciação do projeto
-- [Composer](https://getcomposer.org/) - gerenciador de pacotes php
-- [Doctrine](https://www.doctrine-project.org/projects.html) - conjunto de projetos auxiliares
-  - [ORM](https://doctrine-project.org/projects/orm.html) - Gerador de mapper do banco de dados
-  - [Migrations](https://www.doctrine-project.org/projects/migrations.html) - 
 
