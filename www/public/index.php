@@ -186,7 +186,7 @@
                         <p>4M+ users</p>
                     </div>
                     <button class="learn-more" onclick="uniasselvi()">
-                        Learn More</button>
+                        Descubra Mais</button>
                 </div>
                 <div class="hero-image">
                     <img src="https://images.unsplash.com/photo-1519326882834-04c334752f58?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTg0MDUxMzU&ixlib=rb-1.2.1&q=80"
